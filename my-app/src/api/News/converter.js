@@ -1,5 +1,5 @@
 export const converter = (data) => {
-    console.log(data);
+    // data.map(dataItem => )
     
     return data
 }
