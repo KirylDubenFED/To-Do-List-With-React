@@ -1,21 +1,23 @@
+import PropsType from 'prop-types';
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Button = ({ children, className }) => (
-
-  <button type="button" className={`button ${className}`}>{children}</button>
+  <button className={className} type='button'>
+    {children}
+  </button>
 );
 
-Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
+Button.protoTypes = {
+  children: PropsType.oneOfType([
+    PropsType.string,
+    PropsType.element,
   ]),
-  className: PropTypes.string,
+  className: PropsType.string,
 };
+
 Button.defaultProps = {
-  children: 'Кнопыщщщщща',
+  children: 'Кнопачка',
   className: '',
-};
+}
 
 export default Button;
