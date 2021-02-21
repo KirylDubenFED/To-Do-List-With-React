@@ -4,10 +4,17 @@ import Button from '../Button/Button';
 import List from '../List/List';
 
 function App() {
+  const fruits = [
+    { label: 'Яблоко', id: 1 },
+    { label: 'Киви', id: 2 },
+    { label: 'Груша', id: 3 },
+    { label: 'Мандарин', id: 4 },
+  ];
+
   return (
     <>
       <Button className="button">Добавить задачу</Button>
-      <List className="List" />
+      <List className="List" data={fruits} />
       <div className="App">Hello World</div>
     </>
   );
