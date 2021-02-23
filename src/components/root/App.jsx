@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import './App.scss';
 import Button from '../Button/Button';
 import List from '../List/List';
+import Filter from '../Filter/Filter';
 
 function App() {
   const fruits = [
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      <Filter />
       <Button className="button">Добавить задачу</Button>
       <List className="List" data={fruits} />
       <div className="App">Hello World</div>

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import getFilters from '../../components/api/filterApi/provider'
+import getFilters from '../api/filterApi/provider';
 
-const Filter = ({ children, className }) => {
+const Filter = () => {
   useEffect(() => {
-    getFilters().then((data) => console.log(data)) 
-    });
+    getFilters().then((data) => console.log(data));
+  });
 
   return (
-    <button type='button'></button>
-  )
+    <button type="button">Текущие задачи</button>
+  );
 };
 
 export default Filter;
