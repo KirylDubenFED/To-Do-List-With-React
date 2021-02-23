@@ -5,12 +5,14 @@ const Filter = () => {
   const [filters, setFilters] = useState([]);
   useEffect(() => {
     getFilters().then((data) => setFilters(data));
-  });
+  }, []);
 
   console.log(filters);
 
   return (
-    <button type="button">Текущие задачи</button>
+    filters.map((filtersItem) => (
+      <button type="button" key={filters.id}>{ filtersItem.label }</button>
+    ))
   );
 };
 
