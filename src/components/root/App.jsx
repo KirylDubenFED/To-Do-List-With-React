@@ -9,19 +9,24 @@ import Input from '../Input/Input';
 function App() {
   const [filters, setFilters] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [tasks, setTasks] = useState([]);
+
+  const handleButtonClick = () => {
+    setTasks(inputValue);
+  };
+
+  console.log(tasks);
   console.log(inputValue);
 
   useEffect(() => {
     getFilters().then((data) => setFilters(data));
   }, []);
 
-  console.log(filters);
-
   return (
     <>
       <Input onInputChange={setInputValue} />
       <Filter filters={filters} />
-      <Button className="button">Добавить задачу</Button>
+      <Button onButtonClick={handleButtonClick} className="button">Добавить задачу</Button>
       {/* <List className="List" data={fruits} /> */}
       <div className="App">Hello World</div>
     </>
