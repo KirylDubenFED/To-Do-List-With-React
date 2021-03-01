@@ -1,22 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import './App.scss';
 import Button from '../Button/Button';
-import List from '../List/List';
+// import List from '../List/List';
 import Filter from '../Filter/Filter';
+import getFilters from '../api/filterApi/provider';
 
 function App() {
-  const fruits = [
-    { label: 'Яблоко', id: 1 },
-    { label: 'Киви', id: 2 },
-    { label: 'Груша', id: 3 },
-    { label: 'Мандарин', id: 4 },
-  ];
+  const [filters, setFilters] = useState([]);
+
+  useEffect(() => {
+    getFilters().then((data) => setFilters(data));
+  }, []);
+
+  console.log(filters);
 
   return (
     <>
-      <Filter fruits={fruits} />
+      <Filter filters={filters} />
       <Button className="button">Добавить задачу</Button>
-      <List className="List" data={fruits} />
+      {/* <List className="List" data={fruits} /> */}
       <div className="App">Hello World</div>
     </>
   );

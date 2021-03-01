@@ -1,21 +1,11 @@
 import PropTypers from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import getFilters from '../api/filterApi/provider';
+import React from 'react';
 
-const Filter = ({ fruits }) => {
-  const [filters, setFilters] = useState([]);
-  useEffect(() => {
-    getFilters().then((data) => setFilters(data));
-  }, []);
-
-  console.log(filters);
-
-  return (
-    fruits.map((fruit) => (
-      <button type="button" key={fruit.id}>{fruit.label}</button>
-    ))
-  );
-};
+const Filter = ({ filters }) => (
+  filters.map((filter) => (
+    <button type="button" key={filter.id}>{filter.label}</button>
+  ))
+);
 
 Filter.PropTypes = {
   fruits: PropTypers.arrayOf(PropTypers.object),
