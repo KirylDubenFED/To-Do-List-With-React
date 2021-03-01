@@ -17,6 +17,7 @@ function App() {
   return (
     <>
       <Filter filters={filters} />
+      <Filter filters={[{ id: 0, lable: 'text' }]} />
       <Button className="button">Добавить задачу</Button>
       {/* <List className="List" data={fruits} /> */}
       <div className="App">Hello World</div>

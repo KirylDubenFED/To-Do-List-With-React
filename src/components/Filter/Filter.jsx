@@ -7,7 +7,7 @@ const Filter = ({ filters }) => (
   ))
 );
 
-Filter.PropTypes = {
+Filter.propTypes = {
   fruits: PropTypers.arrayOf(PropTypers.object),
 };
 
