@@ -4,9 +4,12 @@ import Button from '../Button/Button';
 // import List from '../List/List';
 import Filter from '../Filter/Filter';
 import getFilters from '../api/filterApi/provider';
+import Input from '../Input/Input';
 
 function App() {
   const [filters, setFilters] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  console.log(inputValue);
 
   useEffect(() => {
     getFilters().then((data) => setFilters(data));
@@ -16,8 +19,8 @@ function App() {
 
   return (
     <>
+      <Input onInputChange={setInputValue} />
       <Filter filters={filters} />
-      <Filter filters={[{ id: 0, lable: 'text' }]} />
       <Button className="button">Добавить задачу</Button>
       {/* <List className="List" data={fruits} /> */}
       <div className="App">Hello World</div>
