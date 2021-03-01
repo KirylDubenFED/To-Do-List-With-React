@@ -1,7 +1,8 @@
+import PropTypers from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import getFilters from '../api/filterApi/provider';
 
-const Filter = () => {
+const Filter = ({ fruits }) => {
   const [filters, setFilters] = useState([]);
   useEffect(() => {
     getFilters().then((data) => setFilters(data));
@@ -10,10 +11,18 @@ const Filter = () => {
   console.log(filters);
 
   return (
-    filters.map((filtersItem) => (
-      <button type="button" key={filters.id}>{ filtersItem.label }</button>
+    fruits.map((fruit) => (
+      <button type="button" key={fruit.id}>{fruit.label}</button>
     ))
   );
+};
+
+Filter.PropTypes = {
+  fruits: PropTypers.arrayOf(PropTypers.object),
+};
+
+Filter.defaultProps = {
+  fruits: [],
 };
 
 export default Filter;

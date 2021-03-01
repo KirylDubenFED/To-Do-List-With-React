@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Filter />
+      <Filter fruits={fruits} />
       <Button className="button">Добавить задачу</Button>
       <List className="List" data={fruits} />
       <div className="App">Hello World</div>
