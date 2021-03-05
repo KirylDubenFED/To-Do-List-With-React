@@ -5,12 +5,18 @@ import { getNews } from '../../api/News/provider';
 // import { NavLink } from 'react-router-dom';
 // import { Switch, Route } from 'react-router-dom';
 // import HomePage from '../HomePage/HomePage'
+import ShowText from '../ShowText/ShowText'
 
 function App() {
   getNews().then(data => console.log(data))
 
   return (
     <div className='App'>
+
+      <ShowText isGreetting={false} />
+      <button>click</button>
+
+
       <Search />
       {/* <nav>
         <ul>
