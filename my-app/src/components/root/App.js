@@ -10,13 +10,12 @@ import ShowText from '../ShowText/ShowText'
 function App() {
   getNews().then(data => console.log(data))
 
+
+
+
   return (
     <div className='App'>
-
-      <ShowText isGreetting={false} />
-      <button>click</button>
-
-
+      <ShowText isGreeting={false} />
       <Search />
       {/* <nav>
         <ul>
