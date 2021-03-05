@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Search from '../Search/Search'
 import { getNews } from '../../api/News/provider';
@@ -10,12 +10,13 @@ import ShowText from '../ShowText/ShowText'
 function App() {
   getNews().then(data => console.log(data))
 
+  const [isSureGreeting, setSureGseeting] = useState(false);
 
 
 
   return (
     <div className='App'>
-      <ShowText isGreeting={false} />
+      <ShowText onChangeGreeting={setSureGseeting} />
       <Search />
       {/* <nav>
         <ul>
