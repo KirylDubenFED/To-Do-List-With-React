@@ -16,7 +16,7 @@ function App() {
   };
 
   console.log(tasks);
-  console.log(inputValue);
+  // console.log(inputValue);
 
   useEffect(() => {
     getFilters().then((data) => setFilters(data));
