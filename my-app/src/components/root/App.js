@@ -12,15 +12,12 @@ function App() {
       <ul>
         {
           articles.map((article) => {
-            const { id, title, link, imageUrl } = article;
-
-            return (
-              <li key={id}>
-                <h3>{title}</h3>
-                <a href={link}>Ссылка</a>
-                <img src={imageUrl} alt={title}></img>
+              <li key={article.id}>
+                <h3>{article.title}</h3>
+                <a href={article.link}>Ссылка</a>
+                <img src={article.imageUrl} alt={article.title}></img>
               </li>
-            )
+            
           })
         }
       </ul>
