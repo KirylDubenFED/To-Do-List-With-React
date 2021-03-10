@@ -11,14 +11,13 @@ function App() {
     <div className='App'>
       <ul>
         {
-          articles.map((article) => {
-              <li key={article.id}>
-                <h3>{article.title}</h3>
-                <a href={article.link}>Ссылка</a>
-                <img src={article.imageUrl} alt={article.title}></img>
-              </li>
-            
-          })
+          articles.map((article) => (
+            <li key={article.id}>;
+              <h3>{article.title}</h3>;
+              <a href={article.link}>Ссылка</a>;
+              <img src={article.imageUrl} alt={article.title}></img>;
+            </li>
+          ))
         }
       </ul>
       <Search />
