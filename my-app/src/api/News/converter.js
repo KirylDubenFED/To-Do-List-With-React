@@ -1,7 +1,7 @@
 import { News } from "../../entities/news"
 
 export const converter = (artiklesFromServer) => {
-  const resault = artiklesFromServer.map((article, index) =>
+  return artiklesFromServer.map((article, index) =>
     new News({
       id: index,
       title: article.title,
@@ -11,8 +11,4 @@ export const converter = (artiklesFromServer) => {
       link: article.url,
     })
   );
-
-  console.log(artiklesFromServer);
-  console.log(resault);
-  return artiklesFromServer;
 }

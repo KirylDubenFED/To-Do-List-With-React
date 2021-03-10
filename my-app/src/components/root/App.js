@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Search from '../Search/Search'
 import { getNews } from '../../api/News/provider';
-// import { NavLink } from 'react-router-dom';
-// import { Switch, Route } from 'react-router-dom';
-// import HomePage from '../HomePage/HomePage'
 
 function App() {
-  getNews().then(data => console.log(data))
+  const [articles, setArticles] = useState([]);
+  getNews().then(setArticles)
 
   return (
     <div className='App'>
+      <ul>
+        {
+          articles.map((article) => {
+            const { id, title, link, imageUrl } = article;
 
+            return (
+              <li key={id}>
+                <h3>{title}</h3>
+                <a href={link}>Ссылка</a>
+                <img src={imageUrl} alt={title}></img>
+              </li>
+            )
+          })
+        }
+      </ul>
+      <Search />
     </div>
   );
 }
