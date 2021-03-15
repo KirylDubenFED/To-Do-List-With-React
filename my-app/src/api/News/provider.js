@@ -5,4 +5,5 @@ export const getNews = () => (
   fetch(REQUEST_URL)
     .then((response) => (response.json()))
     .then((data) => converter(data.articles))
+
 );
